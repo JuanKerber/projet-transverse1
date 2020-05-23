@@ -11,7 +11,7 @@ Jeu de course multijoueurs en 2D.
 * [Tuto browser game](https://medium.com/hackernoon/how-to-build-a-multiplayer-browser-game-4a793818c29b)
 * [Tuto le plus utile"utile"](https://www.dynetisgames.com/2017/03/06/how-to-make-a-multiplayer-online-game-with-phaser-socket-io-and-node-js/)
 
-*[Node.JS MySQL](https://www.w3schools.com/nodejs/nodejs_mysql.asp)
+* [Node.JS MySQL](https://www.w3schools.com/nodejs/nodejs_mysql.asp)
 
 # Schémas
 ## Schéma de la base de données

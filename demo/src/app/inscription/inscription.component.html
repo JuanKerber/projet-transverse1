@@ -1,0 +1,25 @@
+<a> <img src="./assets/logo-1.png" routerLink="" alt="logo" id="logo"> </a>
+<form>
+  <input id ="pseudo"
+         value="Pseudo"
+         onfocus="this.value=''"
+         required
+         autocomplete="off"
+         name="pseudo"
+         ngModel>
+  <input id="mdp"
+         type="password"
+         value="Mot de passe"
+         onfocus="this.value=''"
+         required
+         autocomplete="off"
+         name="mdp"
+         ngModel>
+  <button type="submit"><span>valider</span></button>
+</form>
+<!--  <button type="button" routerLink="validation"><span>valider</span></button> PROVISOIR POUR LE ROOTING -->
+
+
+<button type="submit" id="settings" routerLink="settings" style="border: 0; background: transparent">
+    <img src="./assets/button-settings.png" width="60%" height="60%" alt="settings" />
+</button>

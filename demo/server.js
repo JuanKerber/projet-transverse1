@@ -4,6 +4,16 @@ const app = express();
 var server = require('http').Server(app);
 const io = require('socket.io').listen(server);
 const path = require('path');
+const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+    host     : '10.25.10.21',
+    user     : 'g1',
+    password : 'XyNFK1br8uvvb9IS',
+    database : 'g1'
+  });
+
+connection.connect();
 
 app.use('/js',express.static(__dirname + '/src/app/game/js'));
 app.use('/assets',express.static(__dirname + '/src/assets'));
@@ -58,6 +68,30 @@ io.on('connection', function (socket) {
         // emit a message to all players to remove this player
         io.emit('PLAYER_DISCONNECT', socket.id);
     });
+
+      //Database
+
+      socket.on('SIGNIN', function (enterdata) {
+        var sql = "INSERT INTO joueur (id_joueur, pseudo, mdp) VALUES ('"+enterdata.id+"', '"+enterdata.pseudo+"', '"+enterdata.mdp+"')";
+    connection.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+    });
+
+    });
+
+
+    socket.on('LOGIN', function (enterdata) {
+        var sql = "INSERT INTO joueur (pseudo, mdp) VALUES ('"+enterdata.pseudo+"', '"+enterdata.mdp+"')";
+    connection.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+    });
+
+    });
+
+
+
 });
 
 // Start the server

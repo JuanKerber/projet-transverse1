@@ -3,6 +3,20 @@ const express = require('express');
 const app = express();
 var server = require('http').Server(app);
 const io = require('socket.io').listen(server);
+const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+    host     : '10.25.10.21',
+    user     : 'g1',
+    password : 'XyNFK1br8uvvb9IS',
+    database : 'g1'
+  });
+
+connection.connect();
+
+
+
+
 
 app.use('/css',express.static(__dirname + '/css'));
 app.use('/js',express.static(__dirname + '/js'));
@@ -59,10 +73,26 @@ io.on('connection', function (socket) {
         // emit a message to all players to remove this player
         io.emit('PLAYER_DISCONNECT', socket.id);
     });
+
+    //Database
+
+    socket.on('ARRIVER', function (playerdata) {
+        var sql = "INSERT INTO joueur (id_joueur, pseudo, mdp) VALUES ('5', 'juju', 'testmdp2')";
+    con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+    });
+
+
+    });
+
+
+
+
 });
 
 // Start the server
-const port = 4200;
+const port = 8080;
 server.listen(port,function(){
     console.log('Listening on '+server.address().port);
 });

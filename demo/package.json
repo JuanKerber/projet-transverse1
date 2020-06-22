@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node src/app/game/server.js",
+    "start": "node server.js",
     "site": "ng serve",
     "game": "node src/app/game/server.js",
     "build": "ng build",
@@ -21,11 +21,13 @@
     "@angular/platform-browser": "~9.0.2",
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/router": "~9.0.2",
+    "@types/socket.io-client": "^1.4.33",
     "enhanced-resolve": "^4.1.1",
     "express": "^4.17.1",
     "phaser": "^3.22.0",
     "rxjs": "~6.5.4",
     "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
     "tslib": "^1.10.0",
     "typescript": "~3.7.5",
     "zone.js": "~0.10.2"

@@ -1,10 +1,10 @@
 <a> <img src="./assets/logo-1.png" routerLink="" alt="logo" id="logo"> </a>
-<form>
-  <input type="pseudo" name="" value="Pseudo">
-  <input type="motDePasse" name="" value="Mot de passe">
-  <!-- <button type="valider" name="valider"><span>valider</span></button>  PROVISOIR POUR LE ROOTING-->
+<form (submit)="login($event)">
+  <input type="text" placeholder="Username" id="username">
+  <input type="password" placeholder="Password" id="password">
+  <button type="submit" name="valider"><span>Valider</span></button>
 </form>
-<button type="button" routerLink="validation"><span>valider</span></button> <!-- PROVISOIR POUR LE ROOTING -->
+<!-- <button type="button" routerLink="validation" ><span>valider</span></button>  -->
 
 
 <button type="submit" id="settings" routerLink="settings" style="border: 0; background: transparent">

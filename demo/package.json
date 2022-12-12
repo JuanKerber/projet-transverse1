@@ -23,7 +23,7 @@
     "@angular/router": "~9.0.2",
     "@types/socket.io-client": "^1.4.33",
     "enhanced-resolve": "^4.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "phaser": "^3.22.0",
     "rxjs": "~6.5.4",
     "socket.io": "^2.3.0",
